@@ -20,7 +20,7 @@ export default class SearchByPriority extends React.Component{
 
     render(){
         return(
-            <div className="btn-group" style={{marginLeft:'20%',marginTop:'0.2%',display:'inline-block',border:'1px solid blue'}} >  
+            <div className="btn-group" style={{marginLeft:'20%',marginTop:'0.2%',display:'inline-block',border:'2px solid black'}} >  
                 <button value = "All" onClick = {this.click}>All</button>                              
                 <button value = "High" onClick = {this.click}>High</button>
                 <button value = "Medium" onClick = {this.click}>Medium</button>
