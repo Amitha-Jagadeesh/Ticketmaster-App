@@ -155,8 +155,8 @@ export default class TicketListTable extends React.Component {
                 <div style={{width:'20%',display:'inline-block'}}>
                     <h2>Some Stats</h2>
                     <p style={{fontSize:'15px'}}>Ticket Priority in %</p>
-                    <PieChart data={[{ title: 'One', value:this.state.numOfcheckedStatus, color: '#E38627' },
-                      { title: 'Two', value: this.state.tickets.length - this.state.numOfcheckedStatus, color: '#C13C37' }
+                    <PieChart data={[{ title: 'CompletedTickets', value:this.state.numOfcheckedStatus, color: '#E38627'},
+                      { title: 'OpenTickets', value: this.state.tickets.length - this.state.numOfcheckedStatus, color: '#C13C37' }
                     ]}/>;                
                 </div> 
                 {this.state.loading ? <img src='/images/spinner.gif' alt='fetching data'></img> :<BarChart data1 = {this.state.numOfcheckedStatus} data2= {this.state.tickets.length - this.state.numOfcheckedStatus} />}
