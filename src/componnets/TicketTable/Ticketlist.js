@@ -5,6 +5,8 @@ import AddTicketForm from '../AddTicket/AddTicketform'
 import SearchTicket from '../search/searchTicket'
 import SearchByPriority from '../searchByPriority/searchByPriority'
 import Progressbar from '../ProgressBar/progressBar';
+import PieChart from 'react-minimal-pie-chart';
+import BarChart from '../BarGraph/Bar-Chart'
 
 export default class TicketListTable extends React.Component {
     constructor(props) {
@@ -149,7 +151,15 @@ export default class TicketListTable extends React.Component {
                         }
                     </tbody>
                 </table><br /><br />
-                {this.state.loading ? <img src='/images/spinner.gif' alt='fetching data'></img> : <Progressbar percentage={this.state.checkedTicketPercentage} />}
+                {this.state.loading ? <img src='/images/spinner.gif' alt='fetching data'></img> : <Progressbar percentage={this.state.checkedTicketPercentage} />} <br />
+                <div style={{width:'20%',display:'inline-block'}}>
+                    <h2>Some Stats</h2>
+                    <p style={{fontSize:'15px'}}>Ticket Priority in %</p>
+                    <PieChart data={[{ title: 'One', value:this.state.numOfcheckedStatus, color: '#E38627' },
+                      { title: 'Two', value: this.state.tickets.length - this.state.numOfcheckedStatus, color: '#C13C37' }
+                    ]}/>;                
+                </div> 
+                {this.state.loading ? <img src='/images/spinner.gif' alt='fetching data'></img> :<BarChart data1 = {this.state.numOfcheckedStatus} data2= {this.state.tickets.length - this.state.numOfcheckedStatus} />}
             </div>
 
         );

@@ -5,7 +5,9 @@
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.7.0",
+    "react-bar-chart": "^0.1.2",
     "react-dom": "^16.7.0",
+    "react-minimal-pie-chart": "^3.3.0",
     "react-progressbar": "^15.4.1",
     "react-scripts": "2.1.2"
   },
